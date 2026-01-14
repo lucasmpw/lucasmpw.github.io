@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suporte - digita!</title>
+    <meta name="description" content="Página de suporte do digita! - Jogo de digitação em português">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #101622 0%, #1b212d 100%);
+            color: #ffffff;
+            min-height: 100vh;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 0;
+            margin-bottom: 40px;
+        }
+
+        .logo {
+            font-size: 56px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #256af4 0%, #9333ea 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 12px;
+            text-shadow: 0 4px 12px rgba(37, 106, 244, 0.25);
+        }
+
+        .subtitle {
+            color: #9ca6ba;
+            font-size: 18px;
+        }
+
+        .card {
+            background: #1b212d;
+            border-radius: 16px;
+            padding: 32px;
+            margin-bottom: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        h2 {
+            color: #256af4;
+            font-size: 28px;
+            margin-bottom: 16px;
+            font-weight: 700;
+        }
+
+        h3 {
+            color: #ffffff;
+            font-size: 18px;
+            margin-top: 24px;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        p {
+            color: #9ca6ba;
+            margin-bottom: 16px;
+        }
+
+        ul {
+            list-style: none;
+            margin-bottom: 16px;
+        }
+
+        li {
+            color: #9ca6ba;
+            margin-bottom: 12px;
+            padding-left: 24px;
+            position: relative;
+        }
+
+        li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #256af4;
+            font-weight: bold;
+        }
+
+        .contact-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #256af4 0%, #9333ea 100%);
+            color: #ffffff;
+            padding: 16px 32px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 8px 16px rgba(37, 106, 244, 0.3);
+        }
+
+        .contact-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 24px rgba(37, 106, 244, 0.4);
+        }
+
+        .version {
+            text-align: center;
+            color: rgba(156, 166, 186, 0.5);
+            font-size: 14px;
+            margin-top: 48px;
+            padding-top: 24px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(37, 106, 244, 0.2);
+            color: #256af4;
+            padding: 4px 12px;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-left: 8px;
+        }
+
+        @media (max-width: 600px) {
+            .logo {
+                font-size: 42px;
+            }
+
+            h2 {
+                font-size: 22px;
+            }
+
+            .card {
+                padding: 24px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1 class="logo">digita!</h1>
+            <p class="subtitle">Jogo de digitação em português</p>
+        </header>
+
+        <div class="card">
+            <h2>📱 Sobre o App</h2>
+            <p>
+                O <strong>digita!</strong> é um jogo de digitação onde palavras em português caem do topo da tela
+                e você precisa digitá-las antes que cheguem ao fundo. Teste suas habilidades de digitação
+                enquanto se diverte!
+            </p>
+        </div>
+
+        <div class="card">
+            <h2>🎮 Como Jogar</h2>
+            <ul>
+                <li>Palavras caem do topo da tela em diferentes pistas</li>
+                <li>Digite a palavra completa antes que ela chegue ao fundo</li>
+                <li>Acumule sequências (streaks) para multiplicar seus pontos</li>
+                <li>Avance de nível e enfrente palavras mais difíceis</li>
+                <li>Cuidado! Você tem apenas 3 vidas</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>⚙️ Configurações</h2>
+            <p>Personalize sua experiência:</p>
+            <ul>
+                <li><strong>Efeitos Sonoros:</strong> Ative/desative sons de feedback</li>
+                <li><strong>Feedback Tátil:</strong> Vibrações ao acertar palavras</li>
+                <li><strong>Música de Fundo:</strong> Trilha sonora durante o jogo</li>
+                <li><strong>Dificuldade:</strong> Escolha entre Fácil, Médio ou Difícil</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>❓ Perguntas Frequentes</h2>
+
+            <h3>Posso digitar com ou sem acentos?</h3>
+            <p>
+                Sim! O jogo aceita palavras com ou sem acentos. Você pode digitar "felicidade"
+                ou "felicidade" - ambos funcionam.
+            </p>
+
+            <h3>Como funciona o sistema de pontos?</h3>
+            <p>
+                Cada palavra vale 10 pontos base. Ao acertar palavras consecutivas, você cria uma sequência
+                (streak) que multiplica seus pontos em até 5x!
+            </p>
+
+            <h3>O que acontece quando perco todas as vidas?</h3>
+            <p>
+                O jogo termina e você pode ver suas estatísticas finais: pontuação total, nível alcançado,
+                maior sequência e precisão.
+            </p>
+        </div>
+
+        <div class="card">
+            <h2>📧 Contato</h2>
+            <p>
+                Encontrou algum problema ou tem sugestões? Entre em contato conosco!
+            </p>
+            <a href="mailto:lucasmpw@gmail.com" class="contact-button">Enviar Email</a>
+        </div>
+
+        <div class="version">
+            <p>digita! v1.0.0</p>
+            <p>© 2026 Lucas MPW</p>
+        </div>
+    </div>
+</body>
+
+</html>
