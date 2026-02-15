@@ -58,11 +58,19 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
         }
 
+        .card.danger {
+            border-color: rgba(239, 68, 68, 0.25);
+        }
+
         h2 {
             color: #256af4;
             font-size: 28px;
             margin-bottom: 16px;
             font-weight: 700;
+        }
+
+        h2.danger {
+            color: #ef4444;
         }
 
         h3 {
@@ -78,7 +86,7 @@
             margin-bottom: 16px;
         }
 
-        ul {
+        ul, ol {
             list-style: none;
             margin-bottom: 16px;
         }
@@ -90,8 +98,24 @@
             position: relative;
         }
 
-        li:before {
+        ul li:before {
             content: "→";
+            position: absolute;
+            left: 0;
+            color: #256af4;
+            font-weight: bold;
+        }
+
+        ol {
+            counter-reset: steps;
+        }
+
+        ol li {
+            counter-increment: steps;
+        }
+
+        ol li:before {
+            content: counter(steps);
             position: absolute;
             left: 0;
             color: #256af4;
@@ -125,15 +149,41 @@
             border-top: 1px solid rgba(255, 255, 255, 0.05);
         }
 
-        .badge {
-            display: inline-block;
-            background: rgba(37, 106, 244, 0.2);
-            color: #256af4;
-            padding: 4px 12px;
-            border-radius: 8px;
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 16px;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 12px 16px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        th {
+            color: #9ca6ba;
             font-size: 12px;
             font-weight: 600;
-            margin-left: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        td {
+            color: #9ca6ba;
+        }
+
+        .warning-box {
+            background: rgba(239, 68, 68, 0.08);
+            border: 1px solid rgba(239, 68, 68, 0.2);
+            border-radius: 12px;
+            padding: 16px 20px;
+            margin-bottom: 16px;
+        }
+
+        .warning-box p {
+            color: #fca5a5;
+            margin-bottom: 0;
         }
 
         @media (max-width: 600px) {
@@ -147,6 +197,11 @@
 
             .card {
                 padding: 24px;
+            }
+
+            th, td {
+                padding: 10px 8px;
+                font-size: 14px;
             }
         }
     </style>
@@ -163,8 +218,8 @@
             <h2>📱 Sobre o App</h2>
             <p>
                 O <strong>digita!</strong> é um jogo de digitação onde palavras em português caem do topo da tela
-                e você precisa digitá-las antes que cheguem ao fundo. Teste suas habilidades de digitação
-                enquanto se diverte!
+                e você precisa digitá-las antes que cheguem ao fundo. Jogue solo com progressão de dificuldade,
+                desafie amigos em batalhas 1v1 em tempo real e dispute o ranking global!
             </p>
         </div>
 
@@ -173,9 +228,10 @@
             <ul>
                 <li>Palavras caem do topo da tela em diferentes pistas</li>
                 <li>Digite a palavra completa antes que ela chegue ao fundo</li>
-                <li>Acumule sequências (streaks) para multiplicar seus pontos</li>
-                <li>Avance de nível e enfrente palavras mais difíceis</li>
-                <li>Cuidado! Você tem apenas 3 vidas</li>
+                <li>Acumule sequências (streaks) para multiplicar seus pontos em até 5x</li>
+                <li>Avance de nível e enfrente palavras mais longas e rápidas</li>
+                <li>No modo solo, uma palavra perdida encerra o jogo — nas batalhas, você tem 3 vidas</li>
+                <li>Adicione amigos e desafie-os para batalhas em tempo real</li>
             </ul>
         </div>
 
@@ -195,34 +251,101 @@
 
             <h3>Posso digitar com ou sem acentos?</h3>
             <p>
-                Sim! O jogo aceita palavras com ou sem acentos. Você pode digitar "felicidade"
-                ou "felicidade" - ambos funcionam.
+                Sim! O jogo aceita palavras com ou sem acentos. Você pode digitar "coração"
+                ou "coracao" — ambos funcionam.
             </p>
 
             <h3>Como funciona o sistema de pontos?</h3>
             <p>
                 Cada palavra vale 10 pontos base. Ao acertar palavras consecutivas, você cria uma sequência
-                (streak) que multiplica seus pontos em até 5x!
+                (streak) que multiplica seus pontos em até 5x! Palavras bônus valem 3x mais pontos.
             </p>
 
-            <h3>O que acontece quando perco todas as vidas?</h3>
+            <h3>Como funcionam as batalhas?</h3>
             <p>
-                O jogo termina e você pode ver suas estatísticas finais: pontuação total, nível alcançado,
-                maior sequência e precisão.
+                Adicione amigos pelo username, envie um convite de batalha e joguem ao mesmo tempo.
+                Ambos recebem as mesmas palavras — quem fizer mais pontos ou sobreviver mais tempo vence!
+            </p>
+        </div>
+
+        <div id="excluir-conta" class="card danger">
+            <h2 class="danger">🗑️ Exclusão de Conta e Dados</h2>
+            <p>
+                O <strong>digita!</strong> permite que você exclua sua conta e todos os dados
+                associados diretamente pelo aplicativo.
+            </p>
+
+            <h3>Como excluir sua conta</h3>
+            <ol>
+                <li>Abra o aplicativo <strong>digita!</strong></li>
+                <li>Acesse a aba <strong>Perfil</strong> no menu inferior</li>
+                <li>Role até o final da página</li>
+                <li>Toque em <strong>"Excluir Conta"</strong></li>
+                <li>Confirme a exclusão no diálogo de confirmação</li>
+            </ol>
+
+            <h3>Dados que são excluídos</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tipo de dado</th>
+                        <th>Ação</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Perfil (nome, username, avatar)</td>
+                        <td>Excluído imediatamente</td>
+                    </tr>
+                    <tr>
+                        <td>Estatísticas de jogo</td>
+                        <td>Excluído imediatamente</td>
+                    </tr>
+                    <tr>
+                        <td>Lista de amigos e solicitações</td>
+                        <td>Excluído imediatamente</td>
+                    </tr>
+                    <tr>
+                        <td>Convites e dados de batalha</td>
+                        <td>Excluído imediatamente</td>
+                    </tr>
+                    <tr>
+                        <td>Conta de autenticação</td>
+                        <td>Excluído imediatamente</td>
+                    </tr>
+                    <tr>
+                        <td>Pontuações no ranking público</td>
+                        <td>Mantidas de forma anônima</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="warning-box">
+                <p>
+                    <strong>Atenção:</strong> A exclusão é permanente e irreversível. Todos os seus dados, amigos,
+                    estatísticas e progresso serão perdidos. Pontuações já submetidas ao ranking permanecem
+                    de forma anônima (somente as 3 iniciais, sem vínculo com sua conta).
+                </p>
+            </div>
+
+            <h3>Não consegue acessar o app?</h3>
+            <p>
+                Se você não consegue acessar o aplicativo, envie um e-mail com o endereço
+                associado à sua conta. A exclusão será processada em até 7 dias úteis.
             </p>
         </div>
 
         <div class="card">
             <h2>📧 Contato</h2>
             <p>
-                Encontrou algum problema ou tem sugestões? Entre em contato conosco!
+                Encontrou algum problema, quer excluir sua conta ou tem sugestões? Entre em contato!
             </p>
             <a href="mailto:lucasmpw@gmail.com" class="contact-button">Enviar Email</a>
         </div>
 
         <div class="version">
-            <p>digita! v1.0.0</p>
-            <p>© 2026 Lucas MPW</p>
+            <p>digita! v1.3.7</p>
+            <p>&copy; 2025 Lucas MPW</p>
         </div>
     </div>
 </body>
